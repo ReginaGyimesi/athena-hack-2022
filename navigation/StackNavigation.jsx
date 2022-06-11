@@ -1,6 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import "react-native-gesture-handler";
+import BadgeScreen, { BadgeScreenNavName } from "../screens/BadgeScreen";
 import HomeScreen, { HomeScreenNavName } from "../screens/HomeScreen";
 import LocationScreen, {
   LocationScreenNavName,
@@ -38,6 +39,7 @@ const StackNavigation = () => (
         component={SubmitShelterScreen}
       />
       <Stack.Screen name={SuccessScreen2NavName} component={SuccessScreen2} />
+      <Stack.Screen name={BadgeScreenNavName} component={BadgeScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 );

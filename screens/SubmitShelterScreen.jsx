@@ -12,6 +12,7 @@ import CircleCheckBox from "react-native-circle-checkbox";
 import ReserveBottomTab from "../components/ReserveBottomTab";
 import ScreenWrapper from "../components/ScreenWrapper";
 import { Colors, FontSizes } from "../styles";
+import { BadgeScreenNavName } from "./BadgeScreen";
 import { SuccessScreen2NavName } from "./SuccessScreen2";
 
 export const SubmitShelterScreenNavName = "SubmitShelterScreen";
@@ -34,7 +35,7 @@ const SubmitShelterScreen = () => {
         <View style={styles.view}>
           <View style={styles.flex}>
             <Image source={require("../assets/images/jim.png")} />
-            <Text style={styles.text}>Jim</Text>
+            <Text style={styles.text}>Petro</Text>
           </View>
           <Text style={styles.label}>Place name</Text>
           <TextInput
@@ -169,7 +170,7 @@ const SubmitShelterScreen = () => {
             <Text style={{ ...styles.label2, paddingRight: 4 }}>
               Social credits included.
             </Text>
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => navigation.navigate(BadgeScreenNavName)}>
               <Text style={{ ...styles.label2, color: Colors.secondary }}>
                 Learn more.
               </Text>

@@ -1,21 +1,40 @@
 import React from "react";
-import { Dimensions, StyleSheet, Text, View } from "react-native";
-
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+} from "react-native";
+import ScreenWrapper from "../components/ScreenWrapper";
 import MapView, { MAP_TYPES, ProviderPropType } from "react-native-maps";
-
+import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { Colors, FontSizes } from "../styles";
 const { width, height } = Dimensions.get("window");
 
 const ASPECT_RATIO = width / height;
-const LATITUDE = 51.509865;
-const LONGITUDE = -0.118092;
-const LATITUDE_DELTA = 0.3;
+const LATITUDE = 54.526;
+const LONGITUDE = 15.2551;
+const LATITUDE_DELTA = 50;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
 export const LocationScreenNavName = "LocationScreen";
+
+export const BackButton = () => {
+  const navigation = useNavigation();
+  return (
+    <TouchableOpacity onPress={() => navigation.goBack(null)}>
+      <View style={styles.back}>
+        <Ionicons name="chevron-back-outline" size={35} color="black" />
+        <Text style={styles.text}>Back</Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
 class LocationScreen extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       region: {
         latitude: LATITUDE,
@@ -53,54 +72,42 @@ class LocationScreen extends React.Component {
   }
 
   render() {
-    console.log(this.state.markers);
-    let markers = this.state.markers.slice(0, 2);
     return (
-      <ScreenWrapper title="Available accomodation" stickyHeaderIndices={[1]}>
-      <SearchBar />
-      <View style={styles.container}>
-        <MapView
-          provider={this.props.provider}
-          ref={(ref) => {
-            this.map = ref;
-          }}
-          mapType={MAP_TYPES.STANDARD}
-          style={styles.map}
-          initialRegion={this.state.region}
-          onRegionChange={(region) => this.onRegionChange(region)}
-          onPress={(e) =>
-            this.setState({
-              markers: [
-                ...this.state.markers,
-                { latlng: e.nativeEvent.coordinate },
-              ],
-            })
-          }
-        >
-          {markers.map((marker, i) => (
+      <>
+        <BackButton />
+        <View style={styles.container}>
+          <MapView
+            provider={this.props.provider}
+            ref={(ref) => {
+              this.map = ref;
+            }}
+            mapType={MAP_TYPES.STANDARD}
+            style={styles.map}
+            initialRegion={this.state.region}
+            onRegionChange={(region) => this.onRegionChange(region)}
+          >
             <MapView.Marker
-              draggable
-              coordinate={marker.latlng}
-              key={i}
-              onDragEnd={(e) =>
-                this.setState({
-                  markers: [
-                    ...this.state.markers,
-                    { latlng: e.nativeEvent.coordinate },
-                  ],
-                })
-              }
+              coordinate={{ latitude: 47.4979, longitude: 19.0402 }}
+              title={"2 bed flat"}
+              description={"Spacious 2 bed flat in the centre of Budapest."}
             />
-          ))}
-        </MapView>
-        <View style={[styles.bubble, styles.latlng]}>
-          <Text style={{ textAlign: "center" }}>
-            {this.state.region.latitude.toPrecision(7)},
-            {this.state.region.longitude.toPrecision(7)}
-          </Text>
+            <MapView.Marker
+              coordinate={{ latitude: 51.5072, longitude: 0.1276 }}
+              title={"3 bed shared room with bathroom"}
+              description={"Cosy 3 bed shared room available with bathroom."}
+            />
+            <MapView.Marker
+              coordinate={{ latitude: 41.9028, longitude: 12.4964 }}
+              title={"Flat for 2"}
+            />
+
+            <MapView.Marker
+              coordinate={{ latitude: 52.52, longitude: 13.405 }}
+              title={"Spare room for 1 person"}
+            />
+          </MapView>
         </View>
-      </View>
-      </ScreenWrapper>
+      </>
     );
   }
 }
@@ -117,6 +124,7 @@ const styles = StyleSheet.create({
   },
   map: {
     ...StyleSheet.absoluteFillObject,
+    zIndex: -1,
   },
   bubble: {
     backgroundColor: "rgba(255,255,255,0.7)",
@@ -142,6 +150,21 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     textAlign: "center",
+  },
+  back: {
+    flexDirection: "row",
+    paddingTop: 40,
+    paddingLeft: 10,
+    alignItems: "center",
+    paddingBottom: 20,
+    zIndex: 1,
+    position: "absolute",
+    top: 0,
+    left: 0,
+  },
+  text: {
+    fontFamily: "Poppins-Light",
+    fontSize: FontSizes.M16,
   },
 });
 

@@ -3,13 +3,14 @@ import { Colors, FontSizes } from "../styles";
 import { AntDesign } from "@expo/vector-icons";
 import { HomeScreenNavName } from "../screens/HomeScreen";
 import { useNavigation } from "@react-navigation/native";
+import { StartScreenNavName } from "../screens/StartScreen";
 
 const SuccessCard = ({ title, subtitle, image }) => {
   const navigation = useNavigation();
   return (
     <View style={styles.view}>
       <TouchableOpacity
-        onPress={() => navigation.navigate(HomeScreenNavName)}
+        onPress={() => navigation.navigate(StartScreenNavName)}
         style={{ position: "absolute", top: 20, right: 20 }}
       >
         <AntDesign name="close" size={24} color="black" />
