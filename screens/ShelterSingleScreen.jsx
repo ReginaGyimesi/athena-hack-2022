@@ -1,11 +1,14 @@
 import { StyleSheet, Image, Text, View } from "react-native";
 import MeetYourHost from "../components/MeetYourHost";
+import ReserveBottomTab from "../components/ReserveBottomTab";
 import ScreenWrapper from "../components/ScreenWrapper";
 import { FontSizes } from "../styles";
 
 export const ShelterSingleScreenNavName = "ShelterSingleScreen";
 const ShelterSingleScreen = () => {
   return (
+    <>
+    <ReserveBottomTab />
     <ScreenWrapper title="Accommodation details">
       <Image source={require("../assets/images/roomImage.png")} />
 
@@ -25,6 +28,7 @@ const ShelterSingleScreen = () => {
         </Text>
       </View>
     </ScreenWrapper>
+    </>
   );
 };
 
@@ -32,7 +36,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
     paddingHorizontal: 30,
-    paddingBottom: 50,
+    paddingBottom: 100,
   },
   text: {
     fontFamily: "Poppins-Light",
