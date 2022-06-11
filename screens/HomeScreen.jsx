@@ -8,7 +8,7 @@ import { FontSizes } from "../styles";
 export const HomeScreenNavName = "HomeScreen";
 const HomeScreen = () => {
   return (
-    <ScreenWrapper title="Available accomodation">
+    <ScreenWrapper title="Available accomodation" stickyHeaderIndices={[2]}>
       <SearchBar />
       <View style={styles.container}>
         <Text style={{ marginBottom: 10, paddingLeft: 20, fontFamily: "Poppins-Light", fontSize: FontSizes.S14 }}>Recently uploaded</Text>

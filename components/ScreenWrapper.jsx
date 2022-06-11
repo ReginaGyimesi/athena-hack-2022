@@ -5,10 +5,10 @@ import { FontSizes } from "../styles/FontSizes";
 import { Ionicons } from "@expo/vector-icons";
 import { ScrollView } from "react-native-gesture-handler";
 
-const ScreenWrapper = ({ title, children }) => {
+const ScreenWrapper = ({ title, children, ...props }) => {
   const navigation = useNavigation();
   return (
-    <ScrollView style={styles.view} stickyHeaderIndices={[2]}>
+    <ScrollView style={styles.view} {...props}>
       <TouchableOpacity onPress={() => navigation.goBack(null)}>
         <View style={styles.back}>
           <Ionicons name="chevron-back-outline" size={35} color="black" />
