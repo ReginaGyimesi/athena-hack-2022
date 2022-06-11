@@ -4,4 +4,5 @@ export const Colors = {
     primary: "#6CADEA",
     secondary: "#5B88B1",
     primText: "#302D2D",
+    lightBlue: "#EFEFEF"
   };

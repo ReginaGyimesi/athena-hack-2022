@@ -6,7 +6,7 @@ import { Colors, FontSizes } from "../styles";
 import { Calendar, CalendarList, Agenda } from "react-native-calendars";
 import DropDownPicker from "react-native-dropdown-picker";
 import { useState } from "react";
-
+import { SuccessScreenNavName } from "./SuccessScreen";
 export const ReserveScreenNavName = "ReserveScreen";
 const ReserveScreen = () => {
   const [open, setOpen] = useState(false);
@@ -17,7 +17,7 @@ const ReserveScreen = () => {
   ]);
   return (
     <>
-      <ReserveBottomTab />
+      <ReserveBottomTab navScreenName={SuccessScreenNavName} />
       <ScreenWrapper title="Reserve accommodation">
         <Image source={require("../assets/images/roomImage.png")} />
 
@@ -98,6 +98,7 @@ const ReserveScreen = () => {
               marginTop: 20,
               borderColor: "#E4E4E4",
               borderWidth: 1,
+              backgroundColor: "#F5F5F5"
             }}
             editable
           />
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderBottomColor: "#E4E4E4",
     borderBottomWidth: 1,
-    paddingBottom: 20,
+    paddingBottom: 30,
     marginBottom: 20,
   },
 });

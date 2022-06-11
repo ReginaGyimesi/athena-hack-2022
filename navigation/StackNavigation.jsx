@@ -10,6 +10,7 @@ import ShelterSingleScreen, {
   ShelterSingleScreenNavName,
 } from "../screens/ShelterSingleScreen";
 import StartScreen, { StartScreenNavName } from "../screens/StartScreen";
+import SuccessScreen, { SuccessScreenNavName } from "../screens/SuccessScreen";
 
 const Stack = createStackNavigator();
 const StackNavigation = () => (
@@ -27,6 +28,7 @@ const StackNavigation = () => (
         component={ShelterSingleScreen}
       />
       <Stack.Screen name={ReserveScreenNavName} component={ReserveScreen} />
+      <Stack.Screen name={SuccessScreenNavName} component={SuccessScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 );

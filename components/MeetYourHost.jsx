@@ -12,7 +12,7 @@ const MeetYourHost = ({}) => {
         <View style={{ paddingLeft: 15, justifyContent: "space-between" }}>
           <View>
             <Text style={styles.heading}>meet your host</Text>
-            <Text style={styles.text}>Ms Gadsy</Text>
+            <Text style={styles.text}>Ms Gladys</Text>
           </View>
           <Text style={styles.detail}>Hosting since May 22</Text>
         </View>

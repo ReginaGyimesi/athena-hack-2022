@@ -56,6 +56,8 @@ class LocationScreen extends React.Component {
     console.log(this.state.markers);
     let markers = this.state.markers.slice(0, 2);
     return (
+      <ScreenWrapper title="Available accomodation" stickyHeaderIndices={[1]}>
+      <SearchBar />
       <View style={styles.container}>
         <MapView
           provider={this.props.provider}
@@ -98,6 +100,7 @@ class LocationScreen extends React.Component {
           </Text>
         </View>
       </View>
+      </ScreenWrapper>
     );
   }
 }
