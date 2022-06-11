@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 import StartCard from "../components/StartCard";
 import { Colors } from "../styles";
 import { LocationScreenNavName } from "./LocationScreen";
@@ -8,15 +8,20 @@ export const StartScreenNavName = "StartScreen";
 const StartScreen = () => {
   return (
     <View style={styles.view}>
+      <Image
+        source={require("../assets/images/Logo.png")}
+        style={styles.image}
+      />
+
       <StartCard
-        title="Choose a Ride"
+        title="Find shelter"
         navScreenName={RequestDetailsScreenNavName}
-        image={require("../assets/images/ride_request_icon.png")}
-        {...styles.margin34}
+        image={require("../assets/images/Search_Illustration.png")}
+        {...styles.margin}
       />
       <StartCard
-        title="Offer a Ride"
-        image={require("../assets/images/ride_offer_icon.png")}
+        title="Share shelter"
+        image={require("../assets/images/Illustration.png")}
         navScreenName={LocationScreenNavName}
       />
     </View>
@@ -27,13 +32,18 @@ const styles = StyleSheet.create({
   view: {
     backgroundColor: Colors.white,
     flex: 1,
-    display: "flex",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
   },
-  margin34: {
-    marginBottom: 34,
+  margin: {
+    marginBottom: 25,
+    marginTop: 35,
+  },
+  image: {
+    width: 162,
+    height: 58,
+    resizeMode: "contain",
   },
 });
 
