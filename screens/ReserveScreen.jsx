@@ -1,23 +1,15 @@
-import { StyleSheet, Image, Text, View, TextInput } from "react-native";
-import MeetYourHost from "../components/MeetYourHost";
+import { Image, StyleSheet, Text, TextInput, View } from "react-native";
+import { Calendar } from "react-native-calendars";
+import DropDownPicker from "react-native-dropdown-picker";
 import ReserveBottomTab from "../components/ReserveBottomTab";
 import ScreenWrapper from "../components/ScreenWrapper";
 import { Colors, FontSizes } from "../styles";
-import { Calendar, CalendarList, Agenda } from "react-native-calendars";
-import DropDownPicker from "react-native-dropdown-picker";
-import { useState } from "react";
 import { SuccessScreenNavName } from "./SuccessScreen";
 export const ReserveScreenNavName = "ReserveScreen";
 const ReserveScreen = () => {
-  const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(null);
-  const [items, setItems] = useState([
-    { label: "1", value: "1" },
-    { label: "2", value: "2" },
-  ]);
   return (
     <>
-      <ReserveBottomTab navScreenName={SuccessScreenNavName} />
+      <ReserveBottomTab title="Reserve" navScreenName={SuccessScreenNavName} />
       <ScreenWrapper title="Reserve accommodation">
         <Image source={require("../assets/images/roomImage.png")} />
 
@@ -26,7 +18,7 @@ const ReserveScreen = () => {
         </Text>
         <View style={styles.container}>
           <Text style={styles.desc}>Add the details of your stay</Text>
-          <Text style={{ marginTop: 5 }}>
+          <Text style={{ ...styles.label, marginTop: 5 }}>
             Available dates (dates marked with grey are reserved):
           </Text>
           <Calendar
@@ -77,28 +69,33 @@ const ReserveScreen = () => {
               },
             }}
           />
-          <View style={styles.flex}>
-            <Text>Number of people</Text>
-            <DropDownPicker
-              open={open}
-              value={value}
-              items={items}
-              setOpen={setOpen}
-              setValue={setValue}
-              setItems={setItems}
-              containerStyle={{ width: "40%" }}
-            />
-          </View>
-          <Text>Any questions?</Text>
+           <View style={styles.flex}>
+          <Text style={styles.label}>Number of people</Text>
+          <TextInput
+            style={{
+                marginTop: 20,
+              paddingLeft: 5,
+              width: 100,
+              height: 30,
+              borderRadius: 5,
+              borderColor: "#E4E4E4",
+              borderWidth: 1,
+              backgroundColor: "#F5F5F5",
+            }}
+            editable
+          />
+        </View>
+          <Text style={styles.label}>If you have any questions, drop them here.</Text>
           <TextInput
             style={{
               padding: 10,
               height: 80,
-              borderRadius: 10,
+              borderRadius: 5,
               marginTop: 20,
               borderColor: "#E4E4E4",
               borderWidth: 1,
-              backgroundColor: "#F5F5F5"
+              backgroundColor: "#F5F5F5",
+              textAlignVertical: "top",
             }}
             editable
           />
@@ -123,8 +120,9 @@ const styles = StyleSheet.create({
   },
   desc: {
     fontFamily: "Poppins-Regular",
-    fontSize: FontSizes.M16,
+    fontSize: FontSizes.ML18,
     marginTop: 10,
+    marginBottom: 10,
   },
   detail: {
     fontFamily: "Poppins-Light",
@@ -140,6 +138,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     paddingBottom: 30,
     marginBottom: 20,
+  },
+  label: {
+    fontSize: FontSizes.M16,
+    fontFamily: "Poppins-Regular",
+    marginTop: 20,
+    marginBottom: 5,
   },
 });
 

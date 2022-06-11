@@ -10,7 +10,11 @@ import ShelterSingleScreen, {
   ShelterSingleScreenNavName,
 } from "../screens/ShelterSingleScreen";
 import StartScreen, { StartScreenNavName } from "../screens/StartScreen";
+import SubmitShelterScreen, {
+  SubmitShelterScreenNavName,
+} from "../screens/SubmitShelterScreen";
 import SuccessScreen, { SuccessScreenNavName } from "../screens/SuccessScreen";
+import SuccessScreen2, { SuccessScreen2NavName } from "../screens/SuccessScreen2";
 
 const Stack = createStackNavigator();
 const StackNavigation = () => (
@@ -29,6 +33,11 @@ const StackNavigation = () => (
       />
       <Stack.Screen name={ReserveScreenNavName} component={ReserveScreen} />
       <Stack.Screen name={SuccessScreenNavName} component={SuccessScreen} />
+      <Stack.Screen
+        name={SubmitShelterScreenNavName}
+        component={SubmitShelterScreen}
+      />
+      <Stack.Screen name={SuccessScreen2NavName} component={SuccessScreen2} />
     </Stack.Navigator>
   </NavigationContainer>
 );

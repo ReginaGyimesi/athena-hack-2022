@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: "Poppins-Medium",
-    fontSize: FontSizes.XL22,
+    fontSize: FontSizes.L20,
     marginTop: 20,
     lineHeight: 33,
   },

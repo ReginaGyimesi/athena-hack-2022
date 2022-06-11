@@ -2,25 +2,24 @@ import { Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { Colors, FontSizes } from "../styles";
 import { AntDesign } from "@expo/vector-icons";
 import { HomeScreenNavName } from "../screens/HomeScreen";
+import { useNavigation } from "@react-navigation/native";
 
-const SuccessCard = ({ subtitle, image }) => {
+const SuccessCard = ({ title, subtitle, image }) => {
   const navigation = useNavigation();
   return (
     <View style={styles.view}>
-      <TouchableOpacity onPress={() => navigation.navigate(HomeScreenNavName)}>
-        <AntDesign
-          name="close"
-          size={24}
-          color="black"
-          style={{ position: "absolute", top: 20, right: 20 }}
-        />
+      <TouchableOpacity
+        onPress={() => navigation.navigate(HomeScreenNavName)}
+        style={{ position: "absolute", top: 20, right: 20 }}
+      >
+        <AntDesign name="close" size={24} color="black" />
       </TouchableOpacity>
       <Image
         source={require("../assets/images/success1.png")}
         style={styles.image}
       />
       <Text style={styles.text}>Hoorayy!</Text>
-      <Text style={styles.text}>Successful reservation</Text>
+      <Text style={styles.text}>{title}</Text>
       <Text style={{ maxWidth: "80%", textAlign: "center", marginTop: 10 }}>
         {subtitle}
       </Text>

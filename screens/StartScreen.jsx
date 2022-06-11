@@ -2,7 +2,7 @@ import { Image, StyleSheet, View } from "react-native";
 import StartCard from "../components/StartCard";
 import { Colors } from "../styles";
 import { HomeScreenNavName } from "./HomeScreen";
-import { RequestDetailsScreenNavName } from "./RequestDetailsScreen";
+import { RequestDetailsScreenNavName, SubmitShelterScreenNavName } from "./SubmitShelterScreen";
 
 export const StartScreenNavName = "StartScreen";
 const StartScreen = () => {
@@ -22,7 +22,7 @@ const StartScreen = () => {
       <StartCard
         title="Share shelter"
         image={require("../assets/images/Illustration.png")}
-        navScreenName={RequestDetailsScreenNavName}
+        navScreenName={SubmitShelterScreenNavName}
       />
     </View>
   );

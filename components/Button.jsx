@@ -17,7 +17,7 @@ const Button = ({ title, navScreenName }) => {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: Colors.secondary,
-    width: "60%",
+    width: "80%",
     height: 46,
     display: "flex",
     justifyContent: "center",

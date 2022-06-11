@@ -3,10 +3,10 @@ import { Colors } from "../styles";
 import { FontSizes } from "../styles/FontSizes";
 import Button from "./Button";
 
-const ReserveBottomTab = ({navScreenName}) => {
+const ReserveBottomTab = ({ title, navScreenName }) => {
   return (
     <View style={styles.view}>
-      <Button title={"Reserve"} navScreenName={navScreenName} />
+      <Button title={title} navScreenName={navScreenName} />
     </View>
   );
 };
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     borderTopWidth: 1,
     borderTopColor: "#D0D1D1",
-    height: "12%",
+    height: 60,
     position: "absolute",
     bottom: 0,
     zIndex: 1,
@@ -25,11 +25,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  button: {
-    backgroundColor: Colors.secondary,
-    width: "80%",
-    height: 46,
-  }
 });
 
 export default ReserveBottomTab;

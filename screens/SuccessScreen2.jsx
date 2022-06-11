@@ -2,13 +2,13 @@ import { StyleSheet, View } from "react-native";
 import SuccessCard from "../components/SuccessCard";
 import { Colors } from "../styles";
 
-export const SuccessScreenNavName = "SuccessScreen";
-const SuccessScreen = () => {
+export const SuccessScreen2NavName = "SuccessScreen2";
+const SuccessScreen2 = () => {
   return (
     <View style={styles.view}>
       <SuccessCard
-        title={"Successful reservation."}
-        subtitle={"Your host will contact you with the details shortly."}
+        title={"Successful submission."}
+        subtitle={"Your future guests can't wait to meet you."}
       />
     </View>
   );
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SuccessScreen;
+export default SuccessScreen2;
