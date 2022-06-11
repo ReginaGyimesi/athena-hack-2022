@@ -25,12 +25,12 @@ const StartScreen = () => {
 
 const styles = StyleSheet.create({
   view: {
+    backgroundColor: Colors.white,
     flex: 1,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-    backgroundColor: Colors.primary,
   },
   margin34: {
     marginBottom: 34,

@@ -1,6 +1,7 @@
 import React from "react";
 import StackNavigation from "./navigation/StackNavigation";
 import { useFonts } from "expo-font";
+import AppLoading from "expo-app-loading";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -14,11 +15,7 @@ export default function App() {
     "Poppins-Black": require("./assets/fonts/Poppins-Black.ttf"),
   });
   if (!fontsLoaded) {
-    return (
-      <RootSiblingParent>
-        <AppLoading />
-      </RootSiblingParent>
-    );
+    return <AppLoading />;
   } else {
     return <StackNavigation />;
   }
