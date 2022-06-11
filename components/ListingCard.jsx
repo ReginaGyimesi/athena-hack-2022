@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     borderRadius: 10,
     width: "90%",
-    border: "1px solid #F2F2F2",
     borderColor: "#D0D1D1",
     borderWidth: 1,
     borderRadius: 10,

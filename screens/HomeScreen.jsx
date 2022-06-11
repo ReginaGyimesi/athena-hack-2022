@@ -1,9 +1,9 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import ScreenWrapper from "../components/ScreenWrapper";
 import SearchBar from "../components/SearchBar";
 import ListingCard from "../components/ListingCard";
-import { View } from "react-native";
-import { Colors } from "../styles";
+import { ShelterSingleScreenNavName } from "./ShelterSingleScreen";
+import { FontSizes } from "../styles";
 
 export const HomeScreenNavName = "HomeScreen";
 const HomeScreen = () => {
@@ -11,10 +11,12 @@ const HomeScreen = () => {
     <ScreenWrapper title="Available accomodation">
       <SearchBar />
       <View style={styles.container}>
+        <Text style={{ marginBottom: 10, paddingLeft: 20, fontFamily: "Poppins-Light", fontSize: FontSizes.S14 }}>Recently uploaded</Text>
         <ListingCard
           title="Hello accomodation"
           people="2 people"
           location="London, United Kingdom"
+          navScreenName={ShelterSingleScreenNavName}
         />
         <ListingCard
           title="Best shelter"

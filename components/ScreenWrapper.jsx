@@ -8,10 +8,10 @@ import { ScrollView } from "react-native-gesture-handler";
 const ScreenWrapper = ({ title, children }) => {
   const navigation = useNavigation();
   return (
-    <ScrollView style={styles.view}>
+    <ScrollView style={styles.view} stickyHeaderIndices={[2]}>
       <TouchableOpacity onPress={() => navigation.goBack(null)}>
         <View style={styles.back}>
-          <Ionicons name="chevron-back-outline" size={30} color="black" />
+          <Ionicons name="chevron-back-outline" size={35} color="black" />
           {/* <Text style={styles.text}>Back</Text> */}
         </View>
       </TouchableOpacity>
@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     paddingLeft: 10,
     alignItems: "center",
-    marginBottom: 26,
-    backgroundColor: Colors.white
+    paddingBottom: 20,
+    backgroundColor: Colors.white,
   },
   text: {
     fontFamily: "Poppins-Light",
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     fontSize: FontSizes.L20,
     textAlign: "center",
     position: "absolute",
-    top: 40,
+    top: 44,
     margin: "auto",
     justifyContent: "center",
     alignSelf: "center",

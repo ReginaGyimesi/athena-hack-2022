@@ -10,6 +10,7 @@ import LocationScreen, {
   LocationScreenNavName,
 } from "../screens/LocationScreen";
 import HomeScreen, { HomeScreenNavName } from "../screens/HomeScreen";
+import ShelterSingleScreen, { ShelterSingleScreenNavName } from "../screens/ShelterSingleScreen";
 
 const Stack = createStackNavigator();
 const StackNavigation = () => (
@@ -25,6 +26,7 @@ const StackNavigation = () => (
       />
       <Stack.Screen name={LocationScreenNavName} component={LocationScreen} />
       <Stack.Screen name={HomeScreenNavName} component={HomeScreen} />
+      <Stack.Screen name={ShelterSingleScreenNavName} component={ShelterSingleScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 );
