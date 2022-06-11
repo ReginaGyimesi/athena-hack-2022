@@ -3,11 +3,12 @@ import { Colors } from "../styles";
 import { useNavigation } from "@react-navigation/native";
 import { FontSizes } from "../styles/FontSizes";
 import { Ionicons } from "@expo/vector-icons";
+import { ScrollView } from "react-native-gesture-handler";
 
 const ScreenWrapper = ({ title, children }) => {
   const navigation = useNavigation();
   return (
-    <View style={[styles.view]}>
+    <ScrollView style={styles.view}>
       <TouchableOpacity onPress={() => navigation.goBack(null)}>
         <View style={styles.back}>
           <Ionicons name="chevron-back-outline" size={30} color="black" />
@@ -16,20 +17,18 @@ const ScreenWrapper = ({ title, children }) => {
       </TouchableOpacity>
       <Text style={styles.title}>{title}</Text>
       {children}
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  view: {
-    backgroundColor: Colors.white,
-  },
   back: {
     flexDirection: "row",
     paddingTop: 40,
     paddingLeft: 10,
     alignItems: "center",
     marginBottom: 26,
+    backgroundColor: Colors.white
   },
   text: {
     fontFamily: "Poppins-Light",
