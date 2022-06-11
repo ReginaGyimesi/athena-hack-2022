@@ -3,10 +3,10 @@ import { Colors } from "../styles";
 import { FontSizes } from "../styles/FontSizes";
 import Button from "./Button";
 
-const ReserveBottomTab = () => {
+const ReserveBottomTab = ({navScreenName}) => {
   return (
     <View style={styles.view}>
-      <Button title={"Reserve"} />
+      <Button title={"Reserve"} navScreenName={navScreenName} />
     </View>
   );
 };

@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
   view: {
     backgroundColor: "rgba(56, 105, 149, 0.07)",
     borderRadius: 10,
-    marginTop: 20,
     padding: 15,
   },
   heading: {

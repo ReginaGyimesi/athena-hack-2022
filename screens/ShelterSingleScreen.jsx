@@ -3,12 +3,13 @@ import MeetYourHost from "../components/MeetYourHost";
 import ReserveBottomTab from "../components/ReserveBottomTab";
 import ScreenWrapper from "../components/ScreenWrapper";
 import { FontSizes } from "../styles";
+import { ReserveScreenNavName } from "./ReserveScreen";
 
 export const ShelterSingleScreenNavName = "ShelterSingleScreen";
 const ShelterSingleScreen = () => {
   return (
     <>
-    <ReserveBottomTab />
+    <ReserveBottomTab navScreenName={ReserveScreenNavName} />
     <ScreenWrapper title="Accommodation details">
       <Image source={require("../assets/images/roomImage.png")} />
 
@@ -42,6 +43,8 @@ const styles = StyleSheet.create({
     fontFamily: "Poppins-Light",
     paddingTop: 5,
     textAlign: "center",
+    backgroundColor: "white",
+    paddingBottom: 20
   },
   heading: {
     marginTop: 20,
