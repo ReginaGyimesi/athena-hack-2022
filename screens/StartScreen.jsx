@@ -1,7 +1,7 @@
-import { StyleSheet, View, Image } from "react-native";
+import { Image, StyleSheet, View } from "react-native";
 import StartCard from "../components/StartCard";
 import { Colors } from "../styles";
-import { LocationScreenNavName } from "./LocationScreen";
+import { HomeScreenNavName } from "./HomeScreen";
 import { RequestDetailsScreenNavName } from "./RequestDetailsScreen";
 
 export const StartScreenNavName = "StartScreen";
@@ -15,14 +15,14 @@ const StartScreen = () => {
 
       <StartCard
         title="Find shelter"
-        navScreenName={RequestDetailsScreenNavName}
+        navScreenName={HomeScreenNavName}
         image={require("../assets/images/Search_Illustration.png")}
         {...styles.margin}
       />
       <StartCard
         title="Share shelter"
         image={require("../assets/images/Illustration.png")}
-        navScreenName={LocationScreenNavName}
+        navScreenName={RequestDetailsScreenNavName}
       />
     </View>
   );

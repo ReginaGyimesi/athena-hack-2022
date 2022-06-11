@@ -9,6 +9,7 @@ import RequestDetailsScreen, {
 import LocationScreen, {
   LocationScreenNavName,
 } from "../screens/LocationScreen";
+import HomeScreen, { HomeScreenNavName } from "../screens/HomeScreen";
 
 const Stack = createStackNavigator();
 const StackNavigation = () => (
@@ -23,6 +24,7 @@ const StackNavigation = () => (
         component={RequestDetailsScreen}
       />
       <Stack.Screen name={LocationScreenNavName} component={LocationScreen} />
+      <Stack.Screen name={HomeScreenNavName} component={HomeScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 );
