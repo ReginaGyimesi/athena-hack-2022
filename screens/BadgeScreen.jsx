@@ -10,7 +10,10 @@ const BadgeScreen = () => {
       <View style={styles.container}>
         <View style={styles.flex}>
           <Text style={styles.heading}>Get a social badge!</Text>
-          <Image source={require("../assets/images/cil_badge.png")} />
+          <Image
+            source={require("../assets/badge.gif")}
+            style={{ alignSelf: "center", width: 40, height: 40 }}
+          />
         </View>
         <Text style={styles.text}>
           You can earn social credits by giving guests an enjoyable stay.
@@ -45,9 +48,10 @@ const BadgeScreen = () => {
             style={{ marginLeft: 13 }}
           />
         </View>
-        <Text style={{ ...styles.text, marginBottom: 40 }}>
+        <Text style={{ ...styles.text, marginBottom: 20 }}>
           You have <Text style={styles.heading}>20</Text> social credits.
         </Text>
+
         <Image
           source={require("../assets/images/Group_87.png")}
           style={styles.image}

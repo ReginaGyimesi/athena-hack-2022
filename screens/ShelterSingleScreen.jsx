@@ -2,7 +2,7 @@ import { StyleSheet, Image, Text, View } from "react-native";
 import MeetYourHost from "../components/MeetYourHost";
 import ReserveBottomTab from "../components/ReserveBottomTab";
 import ScreenWrapper from "../components/ScreenWrapper";
-import { FontSizes } from "../styles";
+import { Colors, FontSizes } from "../styles";
 import { ReserveScreenNavName } from "./ReserveScreen";
 
 export const ShelterSingleScreenNavName = "ShelterSingleScreen";
@@ -23,6 +23,39 @@ const ShelterSingleScreen = () => {
         />
         <View style={styles.container}>
           <Text style={styles.heading}>3 bed shared room with bathroom</Text>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginBottom: 5,
+            }}
+          >
+            <Image source={require("../assets/images/star.png")} />
+            <Image source={require("../assets/images/star.png")} />
+            <Image source={require("../assets/images/star.png")} />
+            <Image source={require("../assets/images/star.png")} />
+            <Image source={require("../assets/images/star.png")} />
+            <Text
+              style={{
+                fontSize: FontSizes.XS12,
+                fontFamily: "Poppins-Medium",
+                color: "#6B6B6B",
+                paddingLeft: 5,
+              }}
+            >
+              4.2 star rating
+            </Text>
+            <Text
+              style={{
+                fontSize: FontSizes.XS12,
+                fontFamily: "Poppins-Regular",
+                color: Colors.secondary,
+                paddingLeft: 5,
+              }}
+            >
+              12 reviews
+            </Text>
+          </View>
           <Text style={styles.details}>3 beds - 1 bath</Text>
           <Text style={styles.details}>No pets</Text>
           <Text style={styles.desc}>

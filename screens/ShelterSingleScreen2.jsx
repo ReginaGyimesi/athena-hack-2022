@@ -4,7 +4,7 @@ import ReserveBottomTab from "../components/ReserveBottomTab";
 import ScreenWrapper from "../components/ScreenWrapper";
 import { FontSizes } from "../styles";
 import { ReserveScreenNavName } from "./ReserveScreen";
-
+import { Colors } from "../styles";
 export const ShelterSingleScreen2NavName = "ShelterSingleScreen2";
 const ShelterSingleScreen2 = () => {
   return (
@@ -16,9 +16,46 @@ const ShelterSingleScreen2 = () => {
         <Text style={styles.text}>
           All accommodations are free of charge, make yourself at home! 🏘️
         </Text>
-        <MeetYourHost name="Anna" date="Hosting since April 1st" image={require("../assets/images/host3.png")} />
+        <MeetYourHost
+          name="Anna"
+          date="Hosting since April 1st"
+          image={require("../assets/images/host3.png")}
+        />
         <View style={styles.container}>
           <Text style={styles.heading}>2 bed flat</Text>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginBottom: 5,
+            }}
+          >
+            <Image source={require("../assets/images/star.png")} />
+            <Image source={require("../assets/images/star.png")} />
+            <Image source={require("../assets/images/star.png")} />
+            <Image source={require("../assets/images/star.png")} />
+            <Image source={require("../assets/images/star.png")} />
+            <Text
+              style={{
+                fontSize: FontSizes.XS12,
+                fontFamily: "Poppins-Medium",
+                color: "#6B6B6B",
+                paddingLeft: 5,
+              }}
+            >
+              4.5 star rating
+            </Text>
+            <Text
+              style={{
+                fontSize: FontSizes.XS12,
+                fontFamily: "Poppins-Regular",
+                color: Colors.secondary,
+                paddingLeft: 5,
+              }}
+            >
+              25 reviews
+            </Text>
+          </View>
           <Text style={styles.details}>2 bedrooms - 1 bath</Text>
           <Text style={styles.details}>Pets allowed</Text>
           <Text style={styles.details}>Air con, heating</Text>

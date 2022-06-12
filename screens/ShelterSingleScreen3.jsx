@@ -2,7 +2,7 @@ import { StyleSheet, Image, Text, View } from "react-native";
 import MeetYourHost from "../components/MeetYourHost";
 import ReserveBottomTab from "../components/ReserveBottomTab";
 import ScreenWrapper from "../components/ScreenWrapper";
-import { FontSizes } from "../styles";
+import { FontSizes, Colors } from "../styles";
 import { ReserveScreenNavName } from "./ReserveScreen";
 
 export const ShelterSingleScreen3NavName = "ShelterSingleScreen3";
@@ -13,7 +13,6 @@ const ShelterSingleScreen3 = () => {
       <ScreenWrapper title="Accommodation details">
         <Image
           source={require("../assets/images/room4.jpg")}
-          maxHeight="50%"
         />
 
         <Text style={styles.text}>
@@ -26,6 +25,39 @@ const ShelterSingleScreen3 = () => {
         />
         <View style={styles.container}>
           <Text style={styles.heading}>Spare room</Text>
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginBottom: 5,
+            }}
+          >
+            <Image source={require("../assets/images/star.png")} />
+            <Image source={require("../assets/images/star.png")} />
+            <Image source={require("../assets/images/star.png")} />
+            <Image source={require("../assets/images/star.png")} />
+            <Image source={require("../assets/images/star.png")} />
+            <Text
+              style={{
+                fontSize: FontSizes.XS12,
+                fontFamily: "Poppins-Medium",
+                color: "#6B6B6B",
+                paddingLeft: 5,
+              }}
+            >
+              4.4 star rating
+            </Text>
+            <Text
+              style={{
+                fontSize: FontSizes.XS12,
+                fontFamily: "Poppins-Regular",
+                color: Colors.secondary,
+                paddingLeft: 5,
+              }}
+            >
+              6 reviews
+            </Text>
+          </View>
           <Text style={styles.details}>1 room</Text>
           <Text style={styles.details}>No pets, no guests</Text>
           <Text style={styles.details}>Heating</Text>
@@ -44,7 +76,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
     paddingHorizontal: 30,
-    paddingBottom: 50,
+    paddingBottom: 100,
   },
   text: {
     fontFamily: "Poppins-Light",
