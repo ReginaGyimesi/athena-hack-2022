@@ -1,25 +1,25 @@
+import { Entypo } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import List from "../components/List";
 import ScreenWrapper from "../components/ScreenWrapper";
 import SearchBar from "../components/SearchBar";
-import ListingCard from "../components/ListingCard";
-import { ShelterSingleScreenNavName } from "./ShelterSingleScreen";
-import { FontSizes, Colors } from "../styles";
-import { Entypo } from "@expo/vector-icons";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import { Colors, FontSizes } from "../styles";
 import { LocationScreenNavName } from "./LocationScreen";
-import { useNavigation } from "@react-navigation/native";
-import { ShelterSingleScreen2NavName } from "./ShelterSingleScreen2";
-import { ShelterSingleScreen3NavName } from "./ShelterSingleScreen3";
-import { ShelterSingleScreen4NavName } from "./ShelterSingleScreen4";
-import { useState } from "react";
-import List from "../components/List";
 export const HomeScreenNavName = "HomeScreen";
 const HomeScreen = () => {
   const navigation = useNavigation();
   const [searchPhrase, setSearchPhrase] = useState("");
   const [clicked, setClicked] = useState(false);
+
   return (
-    <ScreenWrapper title="Available accomodation" stickyHeaderIndices={[2]}>
+    <ScreenWrapper
+      title="Available accomodation"
+      sidemenu={true}
+      stickyHeaderIndices={[2]}
+    >
       <SearchBar
         searchPhrase={searchPhrase}
         setSearchPhrase={setSearchPhrase}

@@ -1,8 +1,10 @@
+import "react-native-gesture-handler";
 import React from "react";
 import StackNavigation from "./navigation/StackNavigation";
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 
+//console.disableYellowBox = true;
 export default function App() {
   const [fontsLoaded] = useFonts({
     "Poppins-Thin": require("./assets/fonts/Poppins-Thin.ttf"),

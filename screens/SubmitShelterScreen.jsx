@@ -159,7 +159,7 @@ const SubmitShelterScreen = () => {
             </View>
           </View>
           <View style={styles.flex2}>
-            <View style={{ paddingRight: 20 }}>
+            <View style={{ paddingRight: 10 }}>
               <Text style={styles.label}>Photos</Text>
               <Image
                 source={require("../assets/images/Group_110.png")}
