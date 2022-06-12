@@ -4,8 +4,101 @@ import ReserveBottomTab from "../components/ReserveBottomTab";
 import ScreenWrapper from "../components/ScreenWrapper";
 import { Colors, FontSizes } from "../styles";
 import { SuccessScreenNavName } from "./SuccessScreen";
+import { useState } from "react";
+import moment from "moment";
+
+let markedDates = {
+  "2022-06-15": {
+    selected: true,
+    startingDay: true,
+    color: "lightgrey",
+  },
+  "2022-06-16": {
+    selected: true,
+    color: "lightgrey",
+  },
+  "2022-06-17": {
+    selected: true,
+    color: "lightgrey",
+  },
+  "2022-06-18": {
+    selected: true,
+    endingDay: true,
+    color: "lightgrey",
+  },
+  "2022-06-21": {
+    selected: true,
+    startingDay: true,
+    color: "lightgrey",
+  },
+  "2022-06-22": {
+    selected: true,
+    color: "lightgrey",
+  },
+  "2022-06-23": {
+    selected: true,
+    endingDay: true,
+    color: "lightgrey",
+  },
+  "2022-06-29": {
+    selected: true,
+    startingDay: true,
+    color: "lightgrey",
+  },
+  "2022-06-30": {
+    selected: true,
+    endingDay: true,
+    color: "lightgrey",
+  },
+};
+
 export const ReserveScreenNavName = "ReserveScreen";
 const ReserveScreen = () => {
+  const [dates, setdates] = useState(markedDates);
+  const [isStartDatePicked, setIsStartDatePicked] = useState(false);
+  const [isEndDatePicked, setIsEndDatePicked] = useState(false);
+  const [startdate, setStartDate] = useState("");
+
+  const selectDate = (day) => {
+    if (!isStartDatePicked) {
+      let markedDates = {};
+      markedDates[day.dateString] = {
+        startingDay: true,
+        color: "#00B0BF",
+        textColor: "#FFFFFF",
+      };
+      setdates(markedDates);
+      setIsEndDatePicked(false);
+      setIsStartDatePicked(true);
+      setStartDate(day.dateString);
+    } else {
+      let markedDates = dates;
+      let startDate = moment(startdate);
+      let endDate = moment(day.dateString);
+      let range = endDate.diff(startDate, "days");
+      if (range > 0) {
+        for (let i = 1; i <= range; i++) {
+          let tempDate = startDate.add(1, "day");
+          tempDate = moment(tempDate).format("YYYY-MM-DD");
+          if (i < range) {
+            markedDates[tempDate] = { color: "#00B0BF", textColor: "#FFFFFF" };
+          } else {
+            markedDates[tempDate] = {
+              endingDay: true,
+              color: "#00B0BF",
+              textColor: "#FFFFFF",
+            };
+          }
+        }
+        setdates(markedDates);
+        setIsEndDatePicked(true);
+        setIsStartDatePicked(false);
+        setStartDate("");
+      } else {
+        alert("Select an upcoming date!");
+      }
+    }
+  };
   return (
     <>
       <ReserveBottomTab title="Reserve" navScreenName={SuccessScreenNavName} />
@@ -21,6 +114,7 @@ const ReserveScreen = () => {
             Available dates (dates marked with grey are reserved):
           </Text>
           <Calendar
+            onDayPress={(day) => selectDate(day)}
             // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
             monthFormat={"MM yyyy"}
             // Do not show days of other months in month page. Default = false
@@ -46,45 +140,28 @@ const ReserveScreen = () => {
             disableAllTouchEventsForDisabledDays={true}
             // Enable the option to swipe between months. Default = false
             enableSwipeMonths={true}
-            markingType={"multi-period"}
-            markedDates={{
-              "2022-06-20": {
-                disabled: true,
-                startingDay: true,
-                color: "grey",
-              },
-              "2022-06-28": { endingDay: true, color: "grey" },
-              "2022-07-08": {
-                selected: true,
-                endingDay: true,
-                color: "green",
-                textColor: "gray",
-              },
-              "2022-07-09": {
-                disabled: true,
-                startingDay: true,
-                color: "green",
-                endingDay: true,
-              },
-            }}
+            markingType={"period"}
+            markedDates={dates}
           />
-           <View style={styles.flex}>
-          <Text style={styles.label}>Number of people</Text>
-          <TextInput
-            style={{
+          <View style={styles.flex}>
+            <Text style={styles.label}>Number of people</Text>
+            <TextInput
+              style={{
                 marginTop: 20,
-              paddingLeft: 5,
-              width: 100,
-              height: 30,
-              borderRadius: 5,
-              borderColor: "#E4E4E4",
-              borderWidth: 1,
-              backgroundColor: "#F5F5F5",
-            }}
-            editable
-          />
-        </View>
-          <Text style={styles.label}>If you have any questions, drop them here.</Text>
+                paddingLeft: 5,
+                width: 100,
+                height: 30,
+                borderRadius: 5,
+                borderColor: "#E4E4E4",
+                borderWidth: 1,
+                backgroundColor: "#F5F5F5",
+              }}
+              editable
+            />
+          </View>
+          <Text style={styles.label}>
+            If you have any questions, drop them here.
+          </Text>
           <TextInput
             style={{
               padding: 10,
