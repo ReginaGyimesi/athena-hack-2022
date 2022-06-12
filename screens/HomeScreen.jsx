@@ -8,6 +8,9 @@ import { Entypo } from "@expo/vector-icons";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import { LocationScreenNavName } from "./LocationScreen";
 import { useNavigation } from "@react-navigation/native";
+import { ShelterSingleScreen2NavName } from "./ShelterSingleScreen2";
+import { ShelterSingleScreen3NavName } from "./ShelterSingleScreen3";
+import { ShelterSingleScreen4NavName } from "./ShelterSingleScreen4";
 
 export const HomeScreenNavName = "HomeScreen";
 const HomeScreen = () => {
@@ -51,35 +54,28 @@ const HomeScreen = () => {
           </TouchableWithoutFeedback>
         </View>
         <ListingCard
-          title="Hello accomodation"
-          people="2 people"
+          title="3 bed shared room..."
+          people="3 people"
           location="London, United Kingdom"
           navScreenName={ShelterSingleScreenNavName}
         />
         <ListingCard
-          title="Best shelter"
+          title="2 bed flat"
           people="6 people"
-          location="Kuala Lumpur, Malaysia"
-        />
-        <ListingCard
-          title="Best accomodation"
-          people="4 people"
           location="Budapest, Hungary"
+          navScreenName={ShelterSingleScreen2NavName}
         />
         <ListingCard
-          title="Hello accomodation"
-          people="2 people"
-          location="London, United Kingdom"
+          title="Spare room"
+          people="1-2 people"
+          location="Berlin, Germany"
+          navScreenName={ShelterSingleScreen3NavName}
         />
         <ListingCard
-          title="Best shelter"
-          people="6 people"
-          location="Kuala Lumpur, Malaysia"
-        />
-        <ListingCard
-          title="Best accomodation"
-          people="4 people"
-          location="Budapest, Hungary"
+          title="Spare room"
+          people="1 person"
+          location="Rome, Italy"
+          navScreenName={ShelterSingleScreen4NavName}
         />
       </View>
     </ScreenWrapper>

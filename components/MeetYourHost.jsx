@@ -1,20 +1,20 @@
 import { StyleSheet, View, Text, Image } from "react-native";
 import { FontSizes } from "../styles";
 
-const MeetYourHost = ({}) => {
+const MeetYourHost = ({ name, date, image }) => {
   return (
     <View style={styles.view}>
       <View style={styles.flex}>
         <Image
-          source={require("../assets/images/host2.png")}
+          source={image}
           style={{ height: 120, width: 120, borderRadius: 10 }}
         />
         <View style={{ paddingLeft: 15, justifyContent: "space-between" }}>
           <View>
             <Text style={styles.heading}>meet your host</Text>
-            <Text style={styles.text}>Ms Gladys</Text>
+            <Text style={styles.text}>{name}</Text>
           </View>
-          <Text style={styles.detail}>Hosting since May 22</Text>
+          <Text style={styles.detail}>{date}</Text>
         </View>
       </View>
     </View>

@@ -10,12 +10,23 @@ import ReserveScreen, { ReserveScreenNavName } from "../screens/ReserveScreen";
 import ShelterSingleScreen, {
   ShelterSingleScreenNavName,
 } from "../screens/ShelterSingleScreen";
+import ShelterSingleScreen2, {
+  ShelterSingleScreen2NavName,
+} from "../screens/ShelterSingleScreen2";
+import ShelterSingleScreen3, {
+  ShelterSingleScreen3NavName,
+} from "../screens/ShelterSingleScreen3";
+import ShelterSingleScreen4, {
+  ShelterSingleScreen4NavName,
+} from "../screens/ShelterSingleScreen4";
 import StartScreen, { StartScreenNavName } from "../screens/StartScreen";
 import SubmitShelterScreen, {
   SubmitShelterScreenNavName,
 } from "../screens/SubmitShelterScreen";
 import SuccessScreen, { SuccessScreenNavName } from "../screens/SuccessScreen";
-import SuccessScreen2, { SuccessScreen2NavName } from "../screens/SuccessScreen2";
+import SuccessScreen2, {
+  SuccessScreen2NavName,
+} from "../screens/SuccessScreen2";
 
 const Stack = createStackNavigator();
 const StackNavigation = () => (
@@ -31,6 +42,18 @@ const StackNavigation = () => (
       <Stack.Screen
         name={ShelterSingleScreenNavName}
         component={ShelterSingleScreen}
+      />
+      <Stack.Screen
+        name={ShelterSingleScreen2NavName}
+        component={ShelterSingleScreen2}
+      />
+      <Stack.Screen
+        name={ShelterSingleScreen3NavName}
+        component={ShelterSingleScreen3}
+      />
+      <Stack.Screen
+        name={ShelterSingleScreen4NavName}
+        component={ShelterSingleScreen4}
       />
       <Stack.Screen name={ReserveScreenNavName} component={ReserveScreen} />
       <Stack.Screen name={SuccessScreenNavName} component={SuccessScreen} />
