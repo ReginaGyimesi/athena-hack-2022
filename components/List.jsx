@@ -1,8 +1,12 @@
 // List.js
 import React from "react";
 import { StyleSheet, Text, View, FlatList, SafeAreaView } from "react-native";
-import { ShelterSingleScreenNavName } from "../screens/ShelterSingleScreen";
+import ShelterSingleScreen, {
+  ShelterSingleScreenNavName,
+} from "../screens/ShelterSingleScreen";
 import { ShelterSingleScreen2NavName } from "../screens/ShelterSingleScreen2";
+import { ShelterSingleScreen3NavName } from "../screens/ShelterSingleScreen3";
+import { ShelterSingleScreen4NavName } from "../screens/ShelterSingleScreen4";
 import ListingCard from "./ListingCard";
 
 const data = [
@@ -22,13 +26,13 @@ const data = [
     name: "Spare room",
     people: "1-2 people",
     details: "Berlin, Germany",
-    navScreenName: ShelterSingleScreen2NavName,
+    navScreenName: ShelterSingleScreen3NavName,
   },
   {
     name: "Spare room",
     people: "1 person",
     details: "Rome, Italy",
-    navScreenName: ShelterSingleScreen2NavName,
+    navScreenName: ShelterSingleScreen4NavName,
   },
 ];
 
@@ -47,7 +51,14 @@ const List = ({ searchPhrase, setClicked }) => {
   const renderItem = ({ item }) => {
     // when no input, show all
     if (searchPhrase === "") {
-      return <Item name={item.name} details={item.details} />;
+      return (
+        <Item
+          name={item.name}
+          details={item.details}
+          people={item.people}
+          navScreenName={item.navScreenName}
+        />
+      );
     }
     // filter of the name
     if (
@@ -55,7 +66,14 @@ const List = ({ searchPhrase, setClicked }) => {
         .toUpperCase()
         .includes(searchPhrase.toUpperCase().trim().replace(/\s/g, ""))
     ) {
-      return <Item name={item.name} details={item.details} />;
+      return (
+        <Item
+          name={item.name}
+          details={item.details}
+          people={item.people}
+          navScreenName={item.navScreenName}
+        />
+      );
     }
     // filter of the description
     if (
@@ -63,7 +81,14 @@ const List = ({ searchPhrase, setClicked }) => {
         .toUpperCase()
         .includes(searchPhrase.toUpperCase().trim().replace(/\s/g, ""))
     ) {
-      return <Item name={item.name} details={item.details} />;
+      return (
+        <Item
+          name={item.name}
+          details={item.details}
+          people={item.people}
+          navScreenName={item.navScreenName}
+        />
+      );
     }
   };
 

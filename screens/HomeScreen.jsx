@@ -20,10 +20,12 @@ const HomeScreen = () => {
   const [clicked, setClicked] = useState(false);
   return (
     <ScreenWrapper title="Available accomodation" stickyHeaderIndices={[2]}>
-      <SearchBar searchPhrase={searchPhrase}
+      <SearchBar
+        searchPhrase={searchPhrase}
         setSearchPhrase={setSearchPhrase}
         clicked={clicked}
-        setClicked={setClicked}/>
+        setClicked={setClicked}
+      />
       <View style={styles.container}>
         <View style={styles.flex}>
           <Text
@@ -59,11 +61,7 @@ const HomeScreen = () => {
             </View>
           </TouchableWithoutFeedback>
         </View>
-        <List
-            searchPhrase={searchPhrase}
-            setClicked={setClicked}
-          />
-       
+        <List searchPhrase={searchPhrase} setClicked={setClicked} />
       </View>
     </ScreenWrapper>
   );

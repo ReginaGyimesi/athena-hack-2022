@@ -11,7 +11,10 @@ const ListingCard = ({ title, people, location, navScreenName }) => {
       <View style={styles.view}>
         <View style={{ ...styles.flex, justifyContent: "space-between" }}>
           <View style={styles.flex}>
-            <Image source={require("../assets/images/building.png")} />
+            <Image
+              source={require("../assets/images/Group_112.png")}
+              style={{ width: 40, height: 40, resizeMode: "contain" }}
+            />
             <View style={{ marginTop: -15, marginLeft: 10 }}>
               <Text style={styles.text}>{title}</Text>
               <View style={styles.flex}>

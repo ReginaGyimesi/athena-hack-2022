@@ -34,7 +34,6 @@ const BadgeScreen = () => {
           style={{ ...styles.flex, justifyContent: "center", marginTop: 10 }}
         >
           <Progress.Bar
-            animated={false}
             borderWidth={0}
             width={250}
             unfilledColor="#E7EAED"
@@ -46,10 +45,17 @@ const BadgeScreen = () => {
             style={{ marginLeft: 13 }}
           />
         </View>
-        <Text style={styles.text}>
+        <Text style={{ ...styles.text, marginBottom: 40 }}>
           You have <Text style={styles.heading}>20</Text> social credits.
         </Text>
-
+        <Image
+          source={require("../assets/images/Group_87.png")}
+          style={styles.image}
+        />
+        <Image
+          source={require("../assets/images/Group_89.png")}
+          style={styles.image2}
+        />
       </View>
     </ScreenWrapper>
   );
@@ -75,6 +81,16 @@ const styles = StyleSheet.create({
   flex: {
     flexDirection: "row",
     alignItems: "center",
+  },
+  image: {
+    width: "100%",
+    height: 142,
+    resizeMode: "contain",
+  },
+  image2: {
+    width: "100%",
+    height: 188,
+    resizeMode: "contain",
   },
 });
 
