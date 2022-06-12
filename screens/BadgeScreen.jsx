@@ -49,7 +49,7 @@ const BadgeScreen = () => {
         <Text style={styles.text}>
           You have <Text style={styles.heading}>20</Text> social credits.
         </Text>
-        <View></View>
+
       </View>
     </ScreenWrapper>
   );

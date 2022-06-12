@@ -161,16 +161,26 @@ const SubmitShelterScreen = () => {
           <View style={styles.flex2}>
             <View style={{ paddingRight: 20 }}>
               <Text style={styles.label}>Photos</Text>
+              <Image
+                source={require("../assets/images/Group_110.png")}
+                style={{ width: 147, height: 130 }}
+              />
             </View>
             <View>
               <Text style={styles.label}>Location</Text>
+              <Image
+                source={require("../assets/images/Group_111.png")}
+                style={{ width: 147, height: 130 }}
+              />
             </View>
           </View>
           <View style={styles.flex2}>
             <Text style={{ ...styles.label2, paddingRight: 4 }}>
               Social credits included.
             </Text>
-            <TouchableWithoutFeedback onPress={() => navigation.navigate(BadgeScreenNavName)}>
+            <TouchableWithoutFeedback
+              onPress={() => navigation.navigate(BadgeScreenNavName)}
+            >
               <Text style={{ ...styles.label2, color: Colors.secondary }}>
                 Learn more.
               </Text>

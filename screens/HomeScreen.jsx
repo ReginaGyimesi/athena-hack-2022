@@ -62,7 +62,7 @@ const HomeScreen = () => {
         <ListingCard
           title="2 bed flat"
           people="6 people"
-          location="Budapest, Hungary"
+          
           navScreenName={ShelterSingleScreen2NavName}
         />
         <ListingCard

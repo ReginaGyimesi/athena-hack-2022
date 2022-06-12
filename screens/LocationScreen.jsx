@@ -12,6 +12,16 @@ import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { Colors, FontSizes } from "../styles";
 const { width, height } = Dimensions.get("window");
+import CardSilder from "react-native-cards-slider";
+import FeaturedCard from "../components/FeaturedCard";
+import ShelterSingleScreen, {
+  ShelterSingleScreenNavName,
+} from "./ShelterSingleScreen";
+import ShelterSingleScreen2, {
+  ShelterSingleScreen2NavName,
+} from "./ShelterSingleScreen2";
+import { ShelterSingleScreen3NavName } from "./ShelterSingleScreen3";
+import { ShelterSingleScreen4NavName } from "./ShelterSingleScreen4";
 
 const ASPECT_RATIO = width / height;
 const LATITUDE = 54.526;
@@ -107,6 +117,36 @@ class LocationScreen extends React.Component {
             />
           </MapView>
         </View>
+        <CardSilder style={{ marginTop: 30, position: "absolute", bottom: 20 }}>
+          <FeaturedCard
+            title="3 bed shared room"
+            people="3 people"
+            location="London, United Kingdom"
+            image={require("../assets/images/image_3.png")}
+            navScreenName={ShelterSingleScreenNavName}
+          />
+          <FeaturedCard
+            title="2 bed flat"
+            people="6 people"
+            location="Budapest, Hungary"
+            image={require("../assets/images/image_4.png")}
+            navScreenName={ShelterSingleScreen2NavName}
+          />
+          <FeaturedCard
+            title="Spare room"
+            people="1-2 people"
+            location="Berlin, Germany"
+            image={require("../assets/images/image_6.png")}
+            navScreenName={ShelterSingleScreen3NavName}
+          />
+          <FeaturedCard
+            title="Spare room"
+            people="1 person"
+            location="Rome, Italy"
+            image={require("../assets/images/image_5.png")}
+            navScreenName={ShelterSingleScreen4NavName}
+          />
+        </CardSilder>
       </>
     );
   }
