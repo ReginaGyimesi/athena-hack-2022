@@ -12,11 +12,11 @@ const FeaturedCard = ({ title, location, people, image, navScreenName }) => {
       onPress={() => navigation.navigate(navScreenName)}
     >
       <View
-        style={{ backgroundColor: Colors.white, borderRadius: 10, padding: 15 }}
+        style={{ backgroundColor: Colors.white, borderRadius: 10, padding: 10 }}
       >
         <View style={styles.flex}>
           <Image source={image} style={styles.image} />
-          <View style={{ marginLeft: 10, width: "70%" }}>
+          <View style={{ width: "70%", paddingLeft: 15 }}>
             <Text style={styles.text}>{title}</Text>
             <Text style={styles.details}>{location}</Text>
             <Text style={styles.details}>{people}</Text>

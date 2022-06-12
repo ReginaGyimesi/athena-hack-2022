@@ -11,13 +11,19 @@ import { useNavigation } from "@react-navigation/native";
 import { ShelterSingleScreen2NavName } from "./ShelterSingleScreen2";
 import { ShelterSingleScreen3NavName } from "./ShelterSingleScreen3";
 import { ShelterSingleScreen4NavName } from "./ShelterSingleScreen4";
-
+import { useState } from "react";
+import List from "../components/List";
 export const HomeScreenNavName = "HomeScreen";
 const HomeScreen = () => {
   const navigation = useNavigation();
+  const [searchPhrase, setSearchPhrase] = useState("");
+  const [clicked, setClicked] = useState(false);
   return (
     <ScreenWrapper title="Available accomodation" stickyHeaderIndices={[2]}>
-      <SearchBar />
+      <SearchBar searchPhrase={searchPhrase}
+        setSearchPhrase={setSearchPhrase}
+        clicked={clicked}
+        setClicked={setClicked}/>
       <View style={styles.container}>
         <View style={styles.flex}>
           <Text
@@ -53,30 +59,11 @@ const HomeScreen = () => {
             </View>
           </TouchableWithoutFeedback>
         </View>
-        <ListingCard
-          title="3 bed shared room..."
-          people="3 people"
-          location="London, United Kingdom"
-          navScreenName={ShelterSingleScreenNavName}
-        />
-        <ListingCard
-          title="2 bed flat"
-          people="6 people"
-          
-          navScreenName={ShelterSingleScreen2NavName}
-        />
-        <ListingCard
-          title="Spare room"
-          people="1-2 people"
-          location="Berlin, Germany"
-          navScreenName={ShelterSingleScreen3NavName}
-        />
-        <ListingCard
-          title="Spare room"
-          people="1 person"
-          location="Rome, Italy"
-          navScreenName={ShelterSingleScreen4NavName}
-        />
+        <List
+            searchPhrase={searchPhrase}
+            setClicked={setClicked}
+          />
+       
       </View>
     </ScreenWrapper>
   );

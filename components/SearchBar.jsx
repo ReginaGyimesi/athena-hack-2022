@@ -17,7 +17,7 @@ const SearchBar = ({ clicked, searchPhrase, setSearchPhrase, setClicked }) => {
         {/* Input field */}
         <TextInput
           style={styles.input}
-          placeholder="Search available accomodation"
+          placeholder="Search available accommodation"
           value={searchPhrase}
           onChangeText={setSearchPhrase}
           onFocus={() => {
@@ -34,6 +34,8 @@ const SearchBar = ({ clicked, searchPhrase, setSearchPhrase, setClicked }) => {
             style={{ padding: 1 }}
             onPress={() => {
               setSearchPhrase("");
+              Keyboard.dismiss();
+              setClicked(false);
             }}
           />
         )}
