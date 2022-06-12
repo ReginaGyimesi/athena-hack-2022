@@ -5,7 +5,7 @@ import { HomeScreenNavName } from "../screens/HomeScreen";
 import { useNavigation } from "@react-navigation/native";
 import { StartScreenNavName } from "../screens/StartScreen";
 
-const SuccessCard = ({ title, subtitle, image }) => {
+const SuccessCard = ({ title, subtitle, image, ...imageprops }) => {
   const navigation = useNavigation();
   return (
     <View style={styles.view}>
@@ -16,8 +16,8 @@ const SuccessCard = ({ title, subtitle, image }) => {
         <AntDesign name="close" size={24} color="black" />
       </TouchableOpacity>
       <Image
-        source={require("../assets/images/success1.png")}
-        style={styles.image}
+        source={image}
+        {...imageprops}
       />
       <Text style={styles.text}>Hoorayy!</Text>
       <Text style={styles.text}>{title}</Text>
@@ -39,8 +39,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   image: {
-    width: 220,
-    height: 300,
     resizeMode: "contain",
   },
   text: {

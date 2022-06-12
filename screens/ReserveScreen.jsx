@@ -1,6 +1,5 @@
 import { Image, StyleSheet, Text, TextInput, View } from "react-native";
 import { Calendar } from "react-native-calendars";
-import DropDownPicker from "react-native-dropdown-picker";
 import ReserveBottomTab from "../components/ReserveBottomTab";
 import ScreenWrapper from "../components/ScreenWrapper";
 import { Colors, FontSizes } from "../styles";

@@ -16,20 +16,13 @@ const ScreenWrapper = ({ title, children, sidemenu, ...props }) => {
   const navigation = useNavigation();
   return (
     <ScrollView style={styles.view} {...props}>
-      {sidemenu ? (
-        <TouchableOpacity onPress={() => DrawerActions.openDrawer()}>
-          <View style={styles.back}>
-          <Ionicons name="reorder-three-outline" size={35} color="black" />
-          </View>
-        </TouchableOpacity>
-      ) : (
-        <TouchableOpacity onPress={() => navigation.goBack(null)}>
-          <View style={styles.back}>
-            <Ionicons name="chevron-back-outline" size={35} color="black" />
-            {/* <Text style={styles.text}>Back</Text> */}
-          </View>
-        </TouchableOpacity>
-      )}
+      <TouchableOpacity onPress={() => navigation.goBack(null)}>
+        <View style={styles.back}>
+          <Ionicons name="chevron-back-outline" size={35} color="black" />
+          {/* <Text style={styles.text}>Back</Text> */}
+        </View>
+      </TouchableOpacity>
+
       <Text style={styles.title}>{title}</Text>
       {children}
     </ScrollView>

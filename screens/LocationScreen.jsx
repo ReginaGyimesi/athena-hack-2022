@@ -115,6 +115,15 @@ class LocationScreen extends React.Component {
               coordinate={{ latitude: 52.52, longitude: 13.405 }}
               title={"Spare room for 1 person"}
             />
+            <MapView.Marker
+               coordinate={{ latitude: 48.8566, longitude: 2.3522 }}
+              title={"1 bed flat"}
+            />
+
+            <MapView.Marker
+              coordinate={{ latitude: 48.1351, longitude: 11.5820 }}
+              title={"Spare room"}
+            />
           </MapView>
         </View>
         <CardSilder style={{ marginTop: 30, position: "absolute", bottom: 20 }}>
@@ -161,6 +170,7 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     justifyContent: "flex-end",
     alignItems: "center",
+    zIndex: -1,
   },
   map: {
     ...StyleSheet.absoluteFillObject,

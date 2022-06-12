@@ -34,6 +34,18 @@ const data = [
     details: "Rome, Italy",
     navScreenName: ShelterSingleScreen4NavName,
   },
+  {
+    name: "1 bed flat",
+    people: "2 people",
+    details: "Paris, France",
+    navScreenName: ShelterSingleScreen4NavName,
+  },
+  {
+    name: "Spare room",
+    people: "1 person",
+    details: "Munich, Germany",
+    navScreenName: ShelterSingleScreen4NavName,
+  },
 ];
 
 // definition of the Item, which will be rendered in the FlatList

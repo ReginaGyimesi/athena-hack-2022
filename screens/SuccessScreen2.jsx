@@ -9,6 +9,8 @@ const SuccessScreen2 = () => {
       <SuccessCard
         title={"Successful submission."}
         subtitle={"Your future guests can't wait to meet you."}
+        image={require("../assets/success2.gif")}
+        style={styles.image}
       />
     </View>
   );
@@ -21,6 +23,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
+  },
+  image: {
+    width: 250,
+    height: 250,
+    resizeMode: "contain",
   },
 });
 
