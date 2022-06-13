@@ -4,11 +4,15 @@ Go-Share aims to connect volunteers with refugees that need free accommodation. 
 
 # Submission and pitch
 ShowCode submission and pitch [link](https://app.showcode.io/project/a97cc0be-c125-46a5-a96d-8f37a74e6866).
-<p>
-Developed in React Native <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>
-</p>
 
 # Visuals
 <p>
-<img src="demo1.gif"/>
+<img src="Presentation_1.png" width="49%" />
+<img src="team.PNG"/ width="49%" />
 </p>
+<p>
+<img src="demo1.gif" width="33%" />
+<img src="demo2.gif" width="33%" />
+<img src="demo3.gif" width="33%" />
+</p>
+
