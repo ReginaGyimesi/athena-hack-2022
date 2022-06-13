@@ -11,8 +11,8 @@ ShowCode submission and pitch [link](https://app.showcode.io/project/a97cc0be-c1
 <img src="team.PNG"/ width="49%" />
 </p>
 <p>
-<img src="demo1.gif" width="33%" />
-<img src="demo2.gif" width="33%" />
-<img src="demo3.gif" width="33%" />
+<img src="demo1.gif" width="32%" />
+<img src="demo2.gif" width="32%" />
+<img src="demo3.gif" width="32%" />
 </p>
 
